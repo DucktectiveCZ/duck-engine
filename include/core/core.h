@@ -11,4 +11,14 @@
 #define DUCK_EXCEPTIONS_NAMESPACE_NAME duck::engine::exceptions
 #define DUCK_ENGINE_SERIALIZATION_NAMESPACE_NAME duck::engine::serialization
 
+namespace DUCK_CORE_NAMESPACE_NAME {
+
+class Object {
+public:
+    Object();
+    virtual ~Object();
+};
+
+}
+
 #endif // DUCK_ENGINE_CORE_CORE_H
