@@ -14,12 +14,12 @@ namespace DUCK_LOGGING_NAMESPACE_NAME {
                               critical= spdlog::level::level_enum::critical,
                               off= spdlog::level::level_enum::off };
     
-    static void trace(const std::string& msg);
-    static void debug(const std::string& msg);
-    static void info(const std::string& msg);
-    static void warn(const std::string& msg);
-    static void error(const std::string& msg);
-    static void critical(const std::string& msg);
+    void trace(const std::string& msg);
+    void debug(const std::string& msg);
+    void info(const std::string& msg);
+    void warn(const std::string& msg);
+    void error(const std::string& msg);
+    void critical(const std::string& msg);
 
     template<typename... Args>
     static void trace(const std::string& fmt, Args&&... args);
