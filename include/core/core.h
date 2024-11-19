@@ -1,24 +1,22 @@
 #ifndef DUCK_ENGINE_CORE_CORE_H
 #define DUCK_ENGINE_CORE_CORE_H
 
-#define DUCK_NAMESPACE_NAME duck::engine
-#define DUCK_ENGINE_CORE_NAMESPACE_NAME duck::engine::core
-#define DUCK_GRAPHICS_NAMESPACE_NAME duck::engine::graphics
-#define DUCK_MATH_NAMESPACE_NAME duck::engine::math
-#define DUCK_PHYSICS_NAMESPACE_NAME duck::engine::physics
-#define DUCK_UTILITY_NAMESPACE_NAME duck::engine::utility
-#define DUCK_LOGGING_NAMESPACE_NAME duck::engine::logging
-#define DUCK_EXCEPTIONS_NAMESPACE_NAME duck::engine::exceptions
-#define DUCK_ENGINE_SERIALIZATION_NAMESPACE_NAME duck::engine::serialization
-#define DUCK_ENGINE_IO_NAMESPACE_NAME duck::engine::io
-#define DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME duck::engine::exceptions
-#define DUCK_ENGINE_SCRIPTS_NAMESPACE_NAME duck::engine::scripts    
+#include <string>
+#define DUCK_ENGINE_NAMESPACE_NAME            duck::engine
+
+#define DUCK_ENGINE_CORE_NAMESPACE_NAME       DUCK_ENGINE_NAMESPACE_NAME::core
+#define DUCK_ENGINE_GRAPHICS_NAMESPACE_NAME   DUCK_ENGINE_NAMESPACE_NAME::graphics
+#define DUCK_ENGINE_PHYSICS_NAMESPACE_NAME    DUCK_ENGINE_NAMESPACE_NAME::physics
+#define DUCK_ENGINE_UTILITY_NAMESPACE_NAME    DUCK_ENGINE_NAMESPACE_NAME::utility
+#define DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME DUCK_ENGINE_NAMESPACE_NAME::exceptions
 namespace DUCK_ENGINE_CORE_NAMESPACE_NAME {
 
 class Object {
-public:
+public: 
     Object();
     virtual ~Object();
+
+    virtual std::string toString() const;
 };
 
 }
