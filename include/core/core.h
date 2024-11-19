@@ -12,7 +12,7 @@
 #define DUCK_ENGINE_SERIALIZATION_NAMESPACE_NAME duck::engine::serialization
 #define DUCK_ENGINE_IO_NAMESPACE_NAME duck::engine::io
 #define DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME duck::engine::exceptions
-
+#define DUCK_ENGINE_SCRIPTS_NAMESPACE_NAME duck::engine::scripts    
 namespace DUCK_ENGINE_CORE_NAMESPACE_NAME {
 
 class Object {
