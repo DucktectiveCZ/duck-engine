@@ -28,3 +28,8 @@ DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::XmlParseException::XmlParseException(cons
     : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception(message) { }
 
 DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::XmlParseException::~XmlParseException() { }
+
+DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryLeakException::MemoryLeakException(const std::string& message)
+    : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception(message) { }
+
+DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryLeakException::~MemoryLeakException() { }
