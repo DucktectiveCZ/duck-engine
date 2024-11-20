@@ -5,7 +5,7 @@
 DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception::Exception(const std::string& message)
     : std::exception(), m_message(message) { }
 
-DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception::~Exception() { }
+DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception::~Exception() noexcept { }
 
 const char* DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception::what() const noexcept {
     return m_message.c_str();
@@ -29,7 +29,17 @@ DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::XmlParseException::XmlParseException(cons
 
 DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::XmlParseException::~XmlParseException() { }
 
-DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryLeakException::MemoryLeakException(const std::string& message)
+DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryException::MemoryException(const std::string& message)
     : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception(message) { }
 
+DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryException::~MemoryException() { }
+
+DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryLeakException::MemoryLeakException(const std::string& message)
+    : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryException(message) { }
+
 DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryLeakException::~MemoryLeakException() { }
+
+DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryAllocationException::MemoryAllocationException(const std::string& message)
+    : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryException(message) { }
+
+DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryAllocationException::~MemoryAllocationException() { }

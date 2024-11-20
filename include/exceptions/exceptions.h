@@ -31,10 +31,22 @@ public:
     virtual ~XmlParseException();
 };
 
-class MemoryLeakException : public Exception {
+class MemoryException : public Exception {
+public:
+    MemoryException(const std::string& message);
+    virtual ~MemoryException();
+};
+
+class MemoryLeakException : public MemoryException {
 public:
     MemoryLeakException(const std::string& message);
     virtual ~MemoryLeakException();
-}
+};
+
+class MemoryAllocationException : public MemoryException {
+public:
+    MemoryAllocationException(const std::string& message);
+    virtual ~MemoryAllocationException();
+};
 
 }
