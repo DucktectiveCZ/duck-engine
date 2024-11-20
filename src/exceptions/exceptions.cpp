@@ -11,6 +11,10 @@ const char* DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception::what() const noexc
     return m_message.c_str();
 }
 
-std::string DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception::toString() const {
+std::string DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception::getMessage() const {
     return m_message;
+}
+
+std::string DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception::toString() const {
+    return getMessage();
 }
