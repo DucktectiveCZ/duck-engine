@@ -10,9 +10,9 @@ class Exception : public std::exception,
 public:
     Exception(const std::string& message);
     virtual ~Exception() noexcept;
-    const char* what() const noexcept;
+    const char* what() const noexcept override;
     
-    std::string getMessage() const;
+    const std::string& getMessage() const;
 
     std::string toString() const override;
 protected:
@@ -23,6 +23,12 @@ class InvalidAccessException : public Exception {
 public:
     InvalidAccessException(const std::string& message);
     virtual ~InvalidAccessException() override;
+};
+
+class XmlParseException : public Exception {
+public:
+    XmlParseException(const std::string& message);
+    virtual ~XmlParseException();
 };
 
 }
