@@ -14,12 +14,17 @@ find_package(spdlog REQUIRED)
 find_package(TinyXML2 REQUIRED)
 find_package(nlohmann_json REQUIRED)
 find_package(Boost REQUIRED COMPONENTS filesystem system)
-
 # Create executable from main.cpp
-add_executable(${PROJECT_NAME}
-    src/main.cpp
+add_executable(${PROJECT_NAME})
+
+
+
+
+file(GLOB_RECURSE SOURCES 
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
 )
 
+target_sources(duck-engine PRIVATE ${SOURCES})
 # Link libraries
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
@@ -44,3 +49,5 @@ target_include_directories(${PROJECT_NAME}
 
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+
+# leon je debil
