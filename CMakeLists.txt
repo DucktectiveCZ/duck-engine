@@ -13,7 +13,7 @@ find_package(fmt REQUIRED)
 find_package(spdlog REQUIRED)
 find_package(TinyXML2 REQUIRED)
 find_package(nlohmann_json REQUIRED)
-find_package(Boost COMPONENTS system filesystem dll REQUIRED)
+find_package(Boost REQUIRED COMPONENTS filesystem system)
 
 # Create executable from main.cpp
 add_executable(${PROJECT_NAME}
@@ -32,7 +32,6 @@ target_link_libraries(${PROJECT_NAME}
         nlohmann_json::nlohmann_json
         Boost::system
         Boost::filesystem
-        Boost::dll
 )
 
 # Set include directories
@@ -40,6 +39,7 @@ target_include_directories(${PROJECT_NAME}
     PRIVATE
         ${PROJECT_SOURCE_DIR}/include
         ${PROJECT_SOURCE_DIR}/src
+        ${Boost_INCLUDE_DIRS}
 )
 
 set(CMAKE_BUILD_TYPE Debug)
