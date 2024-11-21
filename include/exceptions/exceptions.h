@@ -1,52 +1,11 @@
-#include "core/core.h"
-#include <exception>
-#include <string>
+#ifndef DUCK_ENGINE_EXCEPTIONS_EXCEPTIONS_H
+#define DUCK_ENGINE_EXCEPTIONS_EXCEPTIONS_H
 
-namespace DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME {
+#include "exception.h"
+#include "invalidAccessException.h"
+#include "memoryAllocationException.h"
+#include "memoryException.h"
+#include "MemoryLeakException.h"
+#include "xmlParseException.h"
 
-class Exception : public std::exception,
-                  DUCK_ENGINE_CORE_NAMESPACE_NAME::Object
-{
-public:
-    Exception(const std::string& message);
-    virtual ~Exception() noexcept;
-    const char* what() const noexcept override;
-    
-    const std::string& getMessage() const;
-
-    std::string toString() const override;
-protected:
-    std::string m_message;
-};
-
-class InvalidAccessException : public Exception {
-public:
-    InvalidAccessException(const std::string& message);
-    virtual ~InvalidAccessException() override;
-};
-
-class XmlParseException : public Exception {
-public:
-    XmlParseException(const std::string& message);
-    virtual ~XmlParseException();
-};
-
-class MemoryException : public Exception {
-public:
-    MemoryException(const std::string& message);
-    virtual ~MemoryException();
-};
-
-class MemoryLeakException : public MemoryException {
-public:
-    MemoryLeakException(const std::string& message);
-    virtual ~MemoryLeakException();
-};
-
-class MemoryAllocationException : public MemoryException {
-public:
-    MemoryAllocationException(const std::string& message);
-    virtual ~MemoryAllocationException();
-};
-
-}
+#endif // DUCK_ENGINE_EXCEPTIONS_EXCEPTIONS_H
