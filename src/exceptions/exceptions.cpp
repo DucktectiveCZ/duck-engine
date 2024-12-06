@@ -1,5 +1,6 @@
 #include "exceptions/exceptions.h"
 #include "core/core.h"
+#include "exceptions/notImplementedException.h"
 #include <string>
 
 DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception::Exception(const std::string& message)
@@ -20,26 +21,22 @@ std::string DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception::toString() const {
 }
 
 DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::InvalidAccessException::InvalidAccessException(const std::string& message)
-    : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception(message) { }
-
-DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::InvalidAccessException::~InvalidAccessException() { }
+  : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception(message) { }
 
 DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::XmlParseException::XmlParseException(const std::string& message)
-    : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception(message) { }
-
-DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::XmlParseException::~XmlParseException() { }
+  : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception(message) { }
 
 DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryException::MemoryException(const std::string& message)
-    : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception(message) { }
-
-DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryException::~MemoryException() { }
+  : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception(message) { }
 
 DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryLeakException::MemoryLeakException(const std::string& message)
-    : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryException(message) { }
-
-DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryLeakException::~MemoryLeakException() { }
+  : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryException(message) { }
 
 DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryAllocationException::MemoryAllocationException(const std::string& message)
-    : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryException(message) { }
+  : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryException(message) { }
 
-DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::MemoryAllocationException::~MemoryAllocationException() { }
+DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::NotImplementedException::NotImplementedException(const std::string& message)
+  : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::Exception(message) { }
+
+DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::NotImplementedException::NotImplementedException()
+  : DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME::NotImplementedException("Feature not implemented") { }

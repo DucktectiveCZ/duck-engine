@@ -10,7 +10,6 @@ namespace DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME {
 class MemoryLeakException : public MemoryException {
 public:
     MemoryLeakException(const std::string& message);
-    virtual ~MemoryLeakException();
 };
 
 }

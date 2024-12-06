@@ -7,5 +7,6 @@
 #include "memoryException.h"
 #include "MemoryLeakException.h"
 #include "xmlParseException.h"
+#include "notImplementedException.h"
 
 #endif // DUCK_ENGINE_EXCEPTIONS_EXCEPTIONS_H

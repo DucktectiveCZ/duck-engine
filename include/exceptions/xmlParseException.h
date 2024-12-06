@@ -8,7 +8,6 @@ namespace DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME {
 class XmlParseException : public Exception {
 public:
     XmlParseException(const std::string& message);
-    virtual ~XmlParseException();
 };
 
 }

@@ -9,7 +9,6 @@ namespace DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME {
 class MemoryException : public Exception {
 public:
     MemoryException(const std::string& message);
-    virtual ~MemoryException();
 };
 
 }

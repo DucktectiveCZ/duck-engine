@@ -9,7 +9,6 @@ namespace DUCK_ENGINE_EXCEPTIONS_NAMESPACE_NAME {
 class InvalidAccessException : public Exception {
 public:
     InvalidAccessException(const std::string& message);
-    virtual ~InvalidAccessException() override;
 };
 
 }
