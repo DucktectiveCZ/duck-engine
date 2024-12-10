@@ -13,18 +13,17 @@ find_package(fmt REQUIRED)
 find_package(spdlog REQUIRED)
 find_package(TinyXML2 REQUIRED)
 find_package(nlohmann_json REQUIRED)
-find_package(Boost REQUIRED COMPONENTS filesystem system)
+find_package(Boost REQUIRED COMPONENTS filesystem system stacktrace_basic stacktrace_noop stacktrace_addr2line)
+
 # Create executable from main.cpp
 add_executable(${PROJECT_NAME})
-
-
-
 
 file(GLOB_RECURSE SOURCES 
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
 )
 
 target_sources(duck-engine PRIVATE ${SOURCES})
+
 # Link libraries
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
@@ -37,6 +36,9 @@ target_link_libraries(${PROJECT_NAME}
         nlohmann_json::nlohmann_json
         Boost::system
         Boost::filesystem
+        Boost::stacktrace_basic
+        Boost::stacktrace_noop
+        Boost::stacktrace_addr2line
 )
 
 # Set include directories
@@ -47,7 +49,8 @@ target_include_directories(${PROJECT_NAME}
         ${Boost_INCLUDE_DIRS}
 )
 
+# Enable debug symbols and configure build type
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+# set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fdiagnostics-color=always -fdiagnostics-show-option -fsanitize=address -fsanitize=undefined")
 
-# leon je debil
