@@ -1,15 +1,16 @@
 #include "core/core.h"
-#include "core/debug.h"
 #include <string>
 #include <sstream>
 
-DUCK_ENGINE_CORE_NAMESPACE_NAME::Object::Object() { }
+duck::engine::core::Object::Object() { }
+duck::engine::core::Object::~Object() { }
 
-DUCK_ENGINE_CORE_NAMESPACE_NAME::Object::~Object() { }
+duck::engine::core::IInterface::~IInterface() = default;
 
-std::string DUCK_ENGINE_CORE_NAMESPACE_NAME::Object::toString() const {
-    std::stringstream ss;
-    ss << (void*)this;
-    return ss.str();
+std::string duck::engine::core::Object::toString() const {
+  std::stringstream ss;
+  ss << "Object @";
+  ss << (void*)this;
+  return ss.str();
 }
 

@@ -1,0 +1,9 @@
+<Scene Class="Scene1" Loaded="Loaded">
+  <Entity Class="Player1">
+    <BoxCollision Width="10" Height="10" Class="BoxCollission1" CollissionStarted="CollissionStarted" CollissionEnded="CollissionEnded">
+    </BoxCollision>
+    <Sprite Texture="/home/ducktectivecz/cpp/duck-engine/examples/assets/test.png">
+    </Sprite>
+  </Entity>
+</Scene>
+

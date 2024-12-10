@@ -1,0 +1,7 @@
+# ninja log v6
+3	2705	1733664313508121957	CMakeFiles/duck-engine.dir/src/core/core.cpp.o	65cad5a7aebd405a
+5	3125	1733664313510121982	CMakeFiles/duck-engine.dir/src/exceptions/exceptions.cpp.o	d3fa6e8e64bd53e8
+5	6346	1733664313510121982	CMakeFiles/duck-engine.dir/src/core/scene.cpp.o	e22878dc7dcf3745
+4	9967	1733664313509121969	CMakeFiles/duck-engine.dir/src/core/gameObject.cpp.o	d005d88c0a4d1a0
+4	12332	1733664313509121969	CMakeFiles/duck-engine.dir/src/core/debug.cpp.o	8d102766c241c110
+6	13573	1733664313511121994	CMakeFiles/duck-engine.dir/src/main.cpp.o	d518571d8c7c5451

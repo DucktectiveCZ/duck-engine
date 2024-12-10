@@ -1,4 +1,4 @@
-
+/*
 #include "core/debug.h"
 #include "exceptions/exceptions.h"
 #include <spdlog/spdlog.h>
@@ -80,3 +80,4 @@ void* operator new(std::size_t size) {
 void operator delete(void* ptr) noexcept {
     DUCK_ENGINE_DEBUG_NAMESPACE_NAME::MemoryManager::getInstance().deallocate(ptr);
 }
+*/

@@ -2,6 +2,7 @@
 #define DUCK_ENGINE_CORE_CORE_H
 
 #include <string>
+
 #define DUCK_ENGINE_NAMESPACE_NAME duck::engine
 
 #define DUCK_ENGINE_CORE_NAMESPACE_NAME       DUCK_ENGINE_NAMESPACE_NAME::core
@@ -26,7 +27,7 @@ class IInterface {
 public:
   virtual ~IInterface();
 
-  virtual std::string toString() const;
+  virtual std::string toString() const = 0;
 };
 
 }

@@ -1,14 +1,14 @@
 #ifndef DUCK_ENGINE_CORE_SCENE_H
 #define DUCK_ENGINE_CORE_SCENE_H
 
-#include "core/core.h"
 #include "core/gameObject.h"
+#include <string>
 #include <vector>
 #include <memory>
 
-namespace DUCK_ENGINE_CORE_NAMESPACE_NAME {
+namespace duck::engine::core {
 
-class Scene : public IGameObject {
+class Scene : public IParentGameObject {
 public:
   Scene();
   virtual ~Scene();
@@ -18,10 +18,12 @@ public:
   void pushGameObject(std::shared_ptr<IGameObject> gameObject);
   void removeGameObject(std::shared_ptr<IGameObject> gameObject);
     
-  void update();
-  void render();
+  void update() override;
+  void render() override;
   
-  std::vector<std::shared_ptr<IGameObject>> getChildren() const;
+  std::string toString() const override;
+
+  const std::vector<std::shared_ptr<IGameObject>>& getChildren() const override;
 protected:
   std::vector<std::shared_ptr<IGameObject>> m_gameObjects;
 };

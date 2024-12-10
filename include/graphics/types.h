@@ -56,10 +56,21 @@ public:
 
   void setX(Size x);
   void setY(Size y);
-  void setW(Size w);
-  void setH(Size h);
+  void setWidth(Size w);
+  void setHeight(Size h);
   void setPosition(const Point& p);
   void setDimensions(const Dimension& d);
+
+  Size getX() const;
+  Size getY() const;
+  Size getWidth() const;
+  Size getHeight() const;
+
+private:
+  Size m_x;
+  Size m_y;
+  Size m_width;
+  Size m_height;
 };
 
 }

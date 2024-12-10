@@ -1,3 +1,4 @@
+/*
 #ifndef DUCK_ENGINE_CORE_DEBUG_H
 #define DUCK_ENGINE_CORE_DEBUG_H
 
@@ -32,8 +33,7 @@ private:
 }
 
 void* operator new(std::size_t size);
-
-// Overload global delete operator
 void operator delete(void* ptr) noexcept;
 
 #endif // DUCK_ENGINE_CORE_DEBUG_H
+*/
